@@ -2,7 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "docker:ui": "cd packages/companion-ui && ng serve"
+    "docker:ui:start": "cd packages/companion-ui && npm run start",
+    "docker:ui:test": "cd packages/companion-ui && npm run test"
   },
   "devDependencies": {
     "lerna": "^3.4.3"
