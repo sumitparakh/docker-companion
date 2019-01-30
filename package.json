@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "docker:ui": "cd packages/companion-ui && ng serve"
+  },
   "devDependencies": {
     "lerna": "^3.4.3"
   },
