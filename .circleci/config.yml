@@ -33,14 +33,15 @@ jobs:
           - dependency-cache
       - run: 
           name: install-npm-globally
-          command:  'sudo npm install -g @angular/cli'
+          command:  'sudo npm install -g @angular/cli lerna'
       - run: 
-          name: install-npm-angular
-          command:  'sudo npm install'
+          name: install-lerna-packages-dependency
+          command:  'sudo lerna bootstrap'
       - save_cache:
           key:  dependency-cache-{{ checksum "package.json" }}
           paths:
-            - ./node_modules        
+            - ./node_modules
+            - ./packages/**/node_modules/        
       # run tests!
       - run:
           name: npm-angular-test
